@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ⚖️ AI Legal Verifier
 
-## Getting Started
+An AI-powered system that verifies legal content by matching it with authentic Indian laws, Bare Acts, constitutional provisions, and judgments. This tool helps users validate AI-generated or human-drafted legal content with real legal sources, ensuring **transparency**, **jurisdictional accuracy**, and **legal authenticity**.
 
-First, run the development server:
+---
+
+## 🚀 Features
+
+- ✅ Semantic verification of legal statements using NLP
+- 🔍 Match content against Bare Acts, Judgments, and Articles
+- ⚖️ Indian jurisdiction-focused verification
+- 📊 Confidence scoring for retrieved matches
+- 🧠 Uses OpenAI / Groq APIs for language understanding
+- 🌐 Pixel-themed React-based UI
+
+---
+
+## 🧱 Tech Stack
+
+| Layer       | Technology                       |
+|-------------|----------------------------------|
+| Frontend    | React + Vite (Pixel UI)         |
+| APIs Used   | OpenAI API, Groq API             |
+| Styling     | Tailwind CSS                     |
+| Search Logic| Embeddings + vector matching     |
+| Deployment  | Vercel / Netlify (suggested)     |
+
+---
+
+## 📂 Project Structure
+
+AI-Legal-Verifier/
+│
+├── public/ # Static assets
+├── src/
+│ ├── components/ # React components (UI)
+│ ├── hooks/ # Custom React hooks
+│ ├── utils/ # API, embeddings, helpers
+│ ├── App.tsx / index.tsx
+│ └── styles/ # Tailwind or CSS modules
+│
+├── .env.local # API keys (not committed)
+├── package.json # Project metadata
+└── README.md # Documentation
+
+
+---
+
+## ⚙️ How to Run Locally
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/vira250/AI-Legal-Verifier.git
+cd AI-Legal-Verifier
+```
+
+### 2. Create .env.local
+
+# .env.local
+```bash
+VITE_OPENAI_API_KEY=sk-XXXXXXXXXXXXXXXXXXXXXXXX
+VITE_GROQ_API_KEY=groq-XXXXXXXXXXXXXXXXXXXXXXXX
+```
+### 3. Install dependencies
+
+```bash 
+npm install react react-dom vite axios lucide-react framer-motion classnames tailwindcss postcss autoprefixer
+```
+### 4. Run the App
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 💡 Use Cases
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Law Students & Professionals
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Legal AI Tool Builders
 
-## Learn More
+Legal Education Platforms
 
-To learn more about Next.js, take a look at the following resources:
+## 📸 Screenshots
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<p align="center">
+  <img src="Screenshots/launch2.jpg" width="30%" />
+  <img src="Screenshots/launch1.jpg" width="30%" />
+  <img src="Screenshots/main_page.jpg" width="30%" />
+</p>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+<p align="center">
+  <img src="Screenshots/content_page.jpg" width="30%" />
+  <img src="Screenshots/content_page2.jpg" width="30%" />
+  <img src="Screenshots/content_page3.jpg" width="30%" />
+</p>
 
-## Deploy on Vercel
+## 🛠 Future Improvements
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+PDF/Document Upload & Parsing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Judgment Date Filtering
+
+Local vector search indexing
