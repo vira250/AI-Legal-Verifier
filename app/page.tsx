@@ -87,9 +87,9 @@ export default function LegalVerifier() {
     setFeedbackSubmitted(false)
 
     // If this is the first verification, animate input to left
-    if (inputCentered) {
-      setInputCentered(false)
-    }
+    // if (inputCentered) {
+    //   setInputCentered(false)
+    // }
 
     try {
       const response = await fetch("/api/verify-legal", {
@@ -110,6 +110,10 @@ export default function LegalVerifier() {
         throw new Error("Verification failed")
       }
 
+      if (response.ok) {
+        setInputCentered(false)
+      }
+
       const data = await response.json()
 
       // Set new results and trigger animations
@@ -118,14 +122,14 @@ export default function LegalVerifier() {
 
       // Reset and trigger animations
       setShowAnimations(false)
-      setTimeout(() => setShowAnimations(true), 100)
+      setTimeout(() => setShowAnimations(true),100)
     } catch (error) {
       console.error("Error:", error)
 
       // If first verification, animate input to left
-      if (inputCentered) {
-        setInputCentered(false)
-      }
+      // if (inputCentered) {
+      //   setInputCentered(false)
+      // }
 
       setResult({
         isValid: false,
@@ -216,7 +220,7 @@ export default function LegalVerifier() {
 
         {/* Initial Landing Section - Only show when no input section is visible */}
         {!showInputSection && (
-          <div className="text-center py-16">
+          <div className="text-center py-16 mx-auto">
             <div className="relative w-48 h-48 mx-auto mb-8">
               <div className="absolute inset-0 border-4 border-cyan-400/30 rounded-full"></div>
               <div className="absolute inset-4 border-4 border-cyan-400/50 rounded-full"></div>
@@ -237,7 +241,7 @@ export default function LegalVerifier() {
                 <div className="pixel-font-lg text-cyan-300">SC JUDGMENTS</div>
               </div>
               <div className="bg-slate-800/50 p-6 rounded-lg border border-purple-400/30">
-                <div className="pixel-font-3xl text-purple-400 mb-2">12</div>
+                <div className="pixel-font-3xl text-purple-400 mb-2">2</div>
                 <div className="pixel-font-lg text-purple-300">AI MODELS</div>
               </div>
               <div className="bg-slate-800/50 p-6 rounded-lg border border-yellow-400/30">
@@ -264,7 +268,7 @@ export default function LegalVerifier() {
                     <Badge className="bg-green-600/30 text-green-300 border-green-400/30 pixel-font">READY</Badge>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-green-100">HINDI PARSER</span>
+                    <span className="text-green-100">ALL INDIAN LANGUAGE </span>
                     <Badge className="bg-orange-600/30 text-orange-300 border-orange-400/30 pixel-font">ACTIVE</Badge>
                   </div>
                   <div className="flex items-center justify-between">
@@ -277,14 +281,14 @@ export default function LegalVerifier() {
               <div className="bg-slate-800/50 p-6 rounded-lg border border-purple-400/30">
                 <h3 className="pixel-font-xl text-purple-300 mb-4">LEGAL COVERAGE</h3>
                 <div className="grid grid-cols-2 gap-3 pixel-font text-left">
-                  <div className="text-purple-100">IPC 1860</div>
-                  <div className="text-purple-100">CrPC 1973</div>
-                  <div className="text-purple-100">CPC 1908</div>
-                  <div className="text-purple-100">Contract Act</div>
-                  <div className="text-purple-100">Companies Act</div>
-                  <div className="text-purple-100">Labour Laws</div>
-                  <div className="text-purple-100">Family Laws</div>
-                  <div className="text-purple-100">Property Laws</div>
+                   <div className="text-purple-100">Criminal Laws</div>
+                    <div className="text-purple-100">Civil Laws</div>
+                    <div className="text-purple-100">Corporate Laws</div>
+                    <div className="text-purple-100">Contract Act</div>
+                    <div className="text-purple-100">Tax Laws</div>
+                    <div className="text-purple-100">Labour Laws</div>
+                    <div className="text-purple-100">Family Laws</div>
+                    <div className="text-purple-100">Property Laws</div>
                 </div>
               </div>
             </div>
@@ -298,6 +302,7 @@ export default function LegalVerifier() {
               START LEGAL VERIFICATION
               <ArrowRight className="h-6 w-6 ml-3" />
             </Button>
+
           </div>
         )}
 
@@ -440,7 +445,7 @@ export default function LegalVerifier() {
                     <div className="space-y-1">
                       <div className="flex items-center">
                         <div className="w-2 h-2 bg-orange-400 rounded-full mr-2"></div>
-                        <span className="text-orange-400">HINDI: ACTIVE</span>
+                        <span className="text-orange-400">ALL LANGUAGE: ACTIVE</span>
                       </div>
                       <div className="flex items-center">
                         <div className="w-2 h-2 bg-orange-400 rounded-full mr-2"></div>
@@ -687,7 +692,7 @@ export default function LegalVerifier() {
                     <div className="pixel-font-lg text-cyan-400">SC JUDGMENTS</div>
                   </div>
                   <div className="bg-slate-900/50 p-4 rounded border border-purple-400/30 text-center">
-                    <div className="pixel-font-3xl text-purple-300">12</div>
+                    <div className="pixel-font-3xl text-purple-300">2</div>
                     <div className="pixel-font-lg text-purple-400">AI MODELS</div>
                   </div>
                   <div className="bg-slate-900/50 p-4 rounded border border-yellow-400/30 text-center">
@@ -757,11 +762,11 @@ export default function LegalVerifier() {
                 <div className="mt-8 horizontal-full">
                   <h3 className="pixel-font-xl text-yellow-300 mb-4">LEGAL ACTS COVERAGE</h3>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pixel-font-lg">
-                    <div className="text-yellow-100">IPC 1860</div>
-                    <div className="text-yellow-100">CrPC 1973</div>
-                    <div className="text-yellow-100">CPC 1908</div>
+                    <div className="text-yellow-100">Criminal Laws</div>
+                    <div className="text-yellow-100">Civil Laws</div>
+                    <div className="text-yellow-100">Constitutional Laws</div>
                     <div className="text-yellow-100">Contract Act</div>
-                    <div className="text-yellow-100">Companies Act</div>
+                    <div className="text-yellow-100">Tax Laws</div>
                     <div className="text-yellow-100">Labour Laws</div>
                     <div className="text-yellow-100">Family Laws</div>
                     <div className="text-yellow-100">Property Laws</div>
