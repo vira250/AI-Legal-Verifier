@@ -26,12 +26,12 @@ An AI-powered system that verifies legal content by matching it with authentic I
 | Deployment  | Vercel / Netlify (suggested)     |
 
 ---
-
+```bash
 ## 📂 Project Structure
 
-AI-Legal-Verifier/
-│
-├── public/ # Static assets
+AI-Legal-Verifier/</br>
+│</br>
+├── public/ # Static assets </br>
 ├── src/
 │ ├── components/ # React components (UI)
 │ ├── hooks/ # Custom React hooks
@@ -43,7 +43,7 @@ AI-Legal-Verifier/
 ├── package.json # Project metadata
 └── README.md # Documentation
 
-
+```
 ---
 
 ## ⚙️ How to Run Locally
