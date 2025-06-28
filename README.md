@@ -29,9 +29,8 @@ An AI-powered system that verifies legal content by matching it with authentic I
 ```bash
 ## 📂 Project Structure
 
-AI-Legal-Verifier/</br>
-│</br>
-├── public/ # Static assets </br>
+AI-Legal-Verifier/
+├── public/ # Static assets 
 ├── src/
 │ ├── components/ # React components (UI)
 │ ├── hooks/ # Custom React hooks
